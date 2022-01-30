@@ -15,7 +15,7 @@ app.use('/views',express.static(__dirname+'/views'));
 
 app.use(authRoutes);
     
-mongoose.connect("mongodb+srv://golchi:golchi@cluster0.ho3dt.mongodb.net/smartcity",()=>{
+mongoose.connect(process.env.DB,()=>{
     console.log('connected');
     app.listen(3030);
 });
